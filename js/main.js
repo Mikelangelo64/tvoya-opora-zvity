@@ -677,67 +677,67 @@ var slider_news = function slider_news() {
 
 /***/ }),
 
-// /***/ "./src/webpack/app/slider_projects.js":
-// /*!********************************************!*\
-//   !*** ./src/webpack/app/slider_projects.js ***!
-//   \********************************************/
-// /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/webpack/app/slider_projects.js":
+/*!********************************************!*\
+  !*** ./src/webpack/app/slider_projects.js ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-// "use strict";
-// __webpack_require__.r(__webpack_exports__);
-// /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-// /* harmony export */   "slider_projects": () => (/* binding */ slider_projects)
-// /* harmony export */ });
-// /* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
-// /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
-
-
-// var node = undefined;
-// var slider = undefined;
-
-// var window_switcher = function window_switcher() {
-//   if (document.documentElement.clientWidth < 768) {
-//     if (!slider) {
-//       slider = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](node, {
-//         modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination],
-//         slidesPerView: 'auto',
-//         spaceBetween: 24,
-//         pagination: {
-//           el: '.swiper-pagination-projects'
-//         }
-//       });
-//     }
-
-//     return;
-//   } else if (slider) {
-//     slider.destroy(true, true);
-//     slider = null;
-//   }
-// };
-
-// var slider_projects = function slider_projects() {
-//   node = document.querySelector('.swiper-projects');
-
-//   if (!node) {
-//     return;
-//   }
-
-//   window_switcher();
-//   var resize_listener = lodash_debounce__WEBPACK_IMPORTED_MODULE_0__(window_switcher, 50);
-//   window.addEventListener('resize', resize_listener);
-//   document.addEventListener('turbo:before-visit', function () {
-//     window.removeEventListener('resize', resize_listener);
-
-//     if (slider) {
-//       slider.destroy(true, true);
-//       slider = null;
-//     }
-//   });
-// };
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "slider_projects": () => (/* binding */ slider_projects)
+/* harmony export */ });
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash.debounce */ "./node_modules/lodash.debounce/index.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
+var node = undefined;
+var slider = undefined;
 
-// /***/ }),
+var window_switcher = function window_switcher() {
+  if (false) {
+    if (!slider) {
+      slider = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](node, {
+        modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination],
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        pagination: {
+          el: '.swiper-pagination-projects'
+        }
+      });
+    }
+
+    return;
+  } else if (false) {
+    slider.destroy(true, true);
+    slider = null;
+  }
+};
+
+var slider_projects = function slider_projects() {
+  node = document.querySelector('.swiper-projects');
+
+  if (true) {
+    return;
+  }
+
+  window_switcher();
+  var resize_listener = lodash_debounce__WEBPACK_IMPORTED_MODULE_0__(window_switcher, 50);
+  window.addEventListener('resize', resize_listener);
+  document.addEventListener('turbo:before-visit', function () {
+    window.removeEventListener('resize', resize_listener);
+
+    if (slider) {
+      slider.destroy(true, true);
+      slider = null;
+    }
+  });
+};
+
+
+
+/***/ }),
 
 /***/ "./src/webpack/app/slider_reviews.js":
 /*!*******************************************!*\
