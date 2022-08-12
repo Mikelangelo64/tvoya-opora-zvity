@@ -53,7 +53,7 @@ $(document).ready(function () {
 
     //faq
     const faqTitleHeight = $('.toggle-section-head__faq').height()
-    console.log(faqTitleHeight);
+    //console.log(faqTitleHeight);
     document.documentElement.style.setProperty('--faq-titles', faqTitleHeight+'px')
 
     $('.accordion-item .accordion-item__text .accordion-item__subtitle').slideUp(0)
@@ -243,6 +243,7 @@ $(document).ready(function () {
         }
     })
 
+    //swiper projects parthner page
     let nodeProjectsParthnerPageSwiper = document.querySelector('.swiper.swiper-projects.swiper-specprojects__prathner__page')
     let projectsParthnerPageSwiper = undefined
     if (document.documentElement.clientWidth < 768) {
@@ -261,6 +262,7 @@ $(document).ready(function () {
         projectsParthnerPageSwiper = null;
     }
 
+    //swiper projects project page
     let nodeProjectsProjectPageSwiper = document.querySelector('.swiper.swiper-projects.swiper-same-projects__project__page')
     let projectsProjectPageSwiper = undefined
     if (document.documentElement.clientWidth < 768) {
@@ -277,6 +279,25 @@ $(document).ready(function () {
     } else if(projectsProjectPageSwiper) {
         projectsProjectPageSwiper.destroy(true, true);
         projectsProjectPageSwiper = null;
+    }
+
+    //swiper projects napryamki page
+    let nodeProjectsNapryamkiPageSwiper = document.querySelector('.swiper.swiper-projects.swiper-same-projects__napryamki')
+    let projectsNapryamkiPageSwiper = undefined
+    if (document.documentElement.clientWidth < 768) {
+        projectsNapryamkiPageSwiper = new Swiper(nodeProjectsNapryamkiPageSwiper, {
+            slidesPerView: 'auto',
+            spaceBetween: 24,
+            grabCursor: true,
+            autoHeight: true,
+            pagination: {
+                el: '.swiper-same-projects__napryamki .swiper-pagination-projects',
+                clickable: true
+            },
+        })
+    } else if(projectsNapryamkiPageSwiper) {
+        projectsNapryamkiPageSwiper.destroy(true, true);
+        projectsNapryamkiPageSwiper = null;
     }
     
 });
