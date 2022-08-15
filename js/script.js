@@ -68,6 +68,26 @@ $(document).ready(function () {
     })
 
     //end faq
+    //faq-section start
+    if (document.documentElement.clientWidth < 768){
+        $('.toggle-section-head__faq').slideUp()
+
+        $('.faq__choosen__toggle').click(function(e){
+            $(this).toggleClass('_open-faq-heads')
+            $('.toggle-section-head__faq').slideToggle(300)
+        })
+
+        if($('.faq__choosen__toggle')){
+
+            $('.toggle-section-head__item').click(function(e){
+                $('.faq-section .faq__choosen__toggle').removeClass('_open-faq-heads')
+                $('.toggle-section-head__faq').slideUp(300)
+
+                $('.faq-section .faq__choosen__toggle p').html($(this).html());
+            })
+        }
+    }
+    //faq-section end
 
 
     function activateToggleSection(section){
@@ -300,4 +320,27 @@ $(document).ready(function () {
         projectsNapryamkiPageSwiper = null;
     }
     
+    //swiper news
+    let newsBannerSwiper = new Swiper('.swiper.swiper-last-news', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        grabCursor: true,
+        // autoHeight: true,
+        pagination: {
+            el: '.swiper-pagination-last-news',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.last-news__btns__container .swiper-button-next',
+            prevEl: '.last-news__btns__container .swiper-button-prev',
+        },
+        // breakpoints: {
+        //     768:{
+        //         slidesPerView: 1,
+        //         centeredSlides: false,
+        //         spaceBetween: 80,
+        //         autoHeight: false,
+        //     },
+        // }
+    })
 });

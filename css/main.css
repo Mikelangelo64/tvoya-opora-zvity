@@ -4582,7 +4582,7 @@ body textarea:focus-visible {
     right: 0;
   }
 }
-.swiper-horizontal > .swiper-pagination-main {
+.swiper-horizontal > .swiper-pagination-main, .swiper-horizontal > .swiper-pagination-last-news {
   text-align: left;
   padding-left: var(--x-pad);
   bottom: 1.25rem;
@@ -4599,7 +4599,7 @@ body textarea:focus-visible {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .swiper-horizontal > .swiper-pagination-main {
+  .swiper-horizontal > .swiper-pagination-main, .swiper-horizontal > .swiper-pagination-last-news {
     left: 0%;
     right: 0;
     padding-left: var(--x-pad);
@@ -4608,14 +4608,14 @@ body textarea:focus-visible {
   }
 }
 @media screen and (min-width: 1280px) {
-  .swiper-horizontal > .swiper-pagination-main {
+  .swiper-horizontal > .swiper-pagination-main, .swiper-horizontal > .swiper-pagination-last-news {
     padding-left: var(--x-pad);
     bottom: 2rem;
     left: 0%;
     right: 0;
   }
 }
-.swiper-horizontal > .swiper-pagination-main .swiper-pagination-bullet {
+.swiper-horizontal > .swiper-pagination-main .swiper-pagination-bullet, .swiper-horizontal > .swiper-pagination-last-news .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   background-color: #fff;
@@ -4626,7 +4626,7 @@ body textarea:focus-visible {
       -ms-flex: 0 0 8px;
           flex: 0 0 8px;
 }
-.swiper-horizontal > .swiper-pagination-main .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.swiper-horizontal > .swiper-pagination-main .swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-horizontal > .swiper-pagination-last-news .swiper-pagination-bullet.swiper-pagination-bullet-active {
   border: 1px solid #fff;
   background-color: transparent;
   opacity: 1;
@@ -4637,7 +4637,7 @@ body textarea:focus-visible {
   height: 10px;
 }
 @media screen and (min-width: 768px) {
-  .swiper-horizontal > .swiper-pagination-main .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  .swiper-horizontal > .swiper-pagination-main .swiper-pagination-bullet.swiper-pagination-bullet-active, .swiper-horizontal > .swiper-pagination-last-news .swiper-pagination-bullet.swiper-pagination-bullet-active {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 12px;
             flex: 0 0 12px;
@@ -4820,7 +4820,7 @@ body textarea:focus-visible {
 }
 @media screen and (min-width: 450px) {
   .team-list .project-card-data:before {
-    padding-top: 100%;
+    padding-top: 123%;
   }
 }
 .team-list .project-card-data img {
@@ -5931,6 +5931,14 @@ body textarea:focus-visible {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
 }
+.subscribe-layout.news-subscribe-form {
+  margin: 3rem 0 5rem;
+}
+@media screen and (max-width: 769px) {
+  .subscribe-layout.news-subscribe-form {
+    display: none;
+  }
+}
 
 .subscribe-head {
   text-transform: uppercase;
@@ -6874,7 +6882,8 @@ body textarea:focus-visible {
   }
 }
 
-.directions__btns__container, .reviews__btns__container, .top-projects__btns__container {
+.directions__btns__container, .reviews__btns__container, .top-projects__btns__container,
+.last-news__btns__container {
   display: none;
   position: absolute;
   z-index: 2;
@@ -6889,12 +6898,14 @@ body textarea:focus-visible {
           justify-content: space-between;
 }
 @media screen and (min-width: 1024px) {
-  .directions__btns__container, .reviews__btns__container, .top-projects__btns__container {
+  .directions__btns__container, .reviews__btns__container, .top-projects__btns__container,
+.last-news__btns__container {
     width: 100px;
   }
 }
 @media screen and (min-width: 768px) {
-  .directions__btns__container, .reviews__btns__container, .top-projects__btns__container {
+  .directions__btns__container, .reviews__btns__container, .top-projects__btns__container,
+.last-news__btns__container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -6902,7 +6913,9 @@ body textarea:focus-visible {
     top: calc(var(--x-pad) + var(--x-pad) * 0.75);
   }
 }
-.directions__btns__container .swiper-button-next, .directions__btns__container .swiper-button-prev, .reviews__btns__container .swiper-button-next, .reviews__btns__container .swiper-button-prev, .top-projects__btns__container .swiper-button-next, .top-projects__btns__container .swiper-button-prev {
+.directions__btns__container .swiper-button-next, .directions__btns__container .swiper-button-prev, .reviews__btns__container .swiper-button-next, .reviews__btns__container .swiper-button-prev, .top-projects__btns__container .swiper-button-next, .top-projects__btns__container .swiper-button-prev,
+.last-news__btns__container .swiper-button-next,
+.last-news__btns__container .swiper-button-prev {
   position: static;
   z-index: 1;
   width: 30px;
@@ -6925,31 +6938,45 @@ body textarea:focus-visible {
   transition: all 0.3s ease;
 }
 @media screen and (min-width: 1024px) {
-  .directions__btns__container .swiper-button-next, .directions__btns__container .swiper-button-prev, .reviews__btns__container .swiper-button-next, .reviews__btns__container .swiper-button-prev, .top-projects__btns__container .swiper-button-next, .top-projects__btns__container .swiper-button-prev {
+  .directions__btns__container .swiper-button-next, .directions__btns__container .swiper-button-prev, .reviews__btns__container .swiper-button-next, .reviews__btns__container .swiper-button-prev, .top-projects__btns__container .swiper-button-next, .top-projects__btns__container .swiper-button-prev,
+.last-news__btns__container .swiper-button-next,
+.last-news__btns__container .swiper-button-prev {
     width: 40px;
     height: 40px;
   }
 }
-.directions__btns__container .swiper-button-next svg, .directions__btns__container .swiper-button-prev svg, .reviews__btns__container .swiper-button-next svg, .reviews__btns__container .swiper-button-prev svg, .top-projects__btns__container .swiper-button-next svg, .top-projects__btns__container .swiper-button-prev svg {
+.directions__btns__container .swiper-button-next svg, .directions__btns__container .swiper-button-prev svg, .reviews__btns__container .swiper-button-next svg, .reviews__btns__container .swiper-button-prev svg, .top-projects__btns__container .swiper-button-next svg, .top-projects__btns__container .swiper-button-prev svg,
+.last-news__btns__container .swiper-button-next svg,
+.last-news__btns__container .swiper-button-prev svg {
   width: 7px;
   height: auto;
 }
 @media screen and (min-width: 1024px) {
-  .directions__btns__container .swiper-button-next svg, .directions__btns__container .swiper-button-prev svg, .reviews__btns__container .swiper-button-next svg, .reviews__btns__container .swiper-button-prev svg, .top-projects__btns__container .swiper-button-next svg, .top-projects__btns__container .swiper-button-prev svg {
+  .directions__btns__container .swiper-button-next svg, .directions__btns__container .swiper-button-prev svg, .reviews__btns__container .swiper-button-next svg, .reviews__btns__container .swiper-button-prev svg, .top-projects__btns__container .swiper-button-next svg, .top-projects__btns__container .swiper-button-prev svg,
+.last-news__btns__container .swiper-button-next svg,
+.last-news__btns__container .swiper-button-prev svg {
     width: 9px;
   }
 }
-.directions__btns__container .swiper-button-next svg path, .directions__btns__container .swiper-button-prev svg path, .reviews__btns__container .swiper-button-next svg path, .reviews__btns__container .swiper-button-prev svg path, .top-projects__btns__container .swiper-button-next svg path, .top-projects__btns__container .swiper-button-prev svg path {
+.directions__btns__container .swiper-button-next svg path, .directions__btns__container .swiper-button-prev svg path, .reviews__btns__container .swiper-button-next svg path, .reviews__btns__container .swiper-button-prev svg path, .top-projects__btns__container .swiper-button-next svg path, .top-projects__btns__container .swiper-button-prev svg path,
+.last-news__btns__container .swiper-button-next svg path,
+.last-news__btns__container .swiper-button-prev svg path {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.directions__btns__container .swiper-button-next:after, .directions__btns__container .swiper-button-prev:after, .reviews__btns__container .swiper-button-next:after, .reviews__btns__container .swiper-button-prev:after, .top-projects__btns__container .swiper-button-next:after, .top-projects__btns__container .swiper-button-prev:after {
+.directions__btns__container .swiper-button-next:after, .directions__btns__container .swiper-button-prev:after, .reviews__btns__container .swiper-button-next:after, .reviews__btns__container .swiper-button-prev:after, .top-projects__btns__container .swiper-button-next:after, .top-projects__btns__container .swiper-button-prev:after,
+.last-news__btns__container .swiper-button-next:after,
+.last-news__btns__container .swiper-button-prev:after {
   display: none;
 }
-.directions__btns__container .swiper-button-next:hover, .directions__btns__container .swiper-button-prev:hover, .reviews__btns__container .swiper-button-next:hover, .reviews__btns__container .swiper-button-prev:hover, .top-projects__btns__container .swiper-button-next:hover, .top-projects__btns__container .swiper-button-prev:hover {
+.directions__btns__container .swiper-button-next:hover, .directions__btns__container .swiper-button-prev:hover, .reviews__btns__container .swiper-button-next:hover, .reviews__btns__container .swiper-button-prev:hover, .top-projects__btns__container .swiper-button-next:hover, .top-projects__btns__container .swiper-button-prev:hover,
+.last-news__btns__container .swiper-button-next:hover,
+.last-news__btns__container .swiper-button-prev:hover {
   border-color: #EE2742;
 }
-.directions__btns__container .swiper-button-next:hover svg path, .directions__btns__container .swiper-button-prev:hover svg path, .reviews__btns__container .swiper-button-next:hover svg path, .reviews__btns__container .swiper-button-prev:hover svg path, .top-projects__btns__container .swiper-button-next:hover svg path, .top-projects__btns__container .swiper-button-prev:hover svg path {
+.directions__btns__container .swiper-button-next:hover svg path, .directions__btns__container .swiper-button-prev:hover svg path, .reviews__btns__container .swiper-button-next:hover svg path, .reviews__btns__container .swiper-button-prev:hover svg path, .top-projects__btns__container .swiper-button-next:hover svg path, .top-projects__btns__container .swiper-button-prev:hover svg path,
+.last-news__btns__container .swiper-button-next:hover svg path,
+.last-news__btns__container .swiper-button-prev:hover svg path {
   stroke: #EE2742;
 }
 .top-projects__btns__container {
@@ -7188,6 +7215,14 @@ body textarea:focus-visible {
   .banner-gradient {
     height: unset;
     display: block;
+  }
+}
+.banner-gradient.banner-gradient__news__one {
+  height: 414px;
+}
+@media screen and (min-width: 768px) {
+  .banner-gradient.banner-gradient__news__one {
+    height: 600px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -8767,7 +8802,7 @@ body textarea:focus-visible {
   border-color: #fff;
 }
 
-.partnership-form input[type=text], .partnership-form input[type=tel], .partnership-form input[type=number], .partnership-form textarea {
+.partnership-form input[type=text], .partnership-form input[type=tel], .partnership-form input[type=number], .partnership-form textarea, .faq-form input[type=text], .faq-form input[type=tel], .faq-form input[type=number], .faq-form textarea {
   width: 100%;
   background: rgb(255, 255, 255);
   border: 1px solid #879E95;
@@ -8781,38 +8816,38 @@ body textarea:focus-visible {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.partnership-form input[type=text]:focus, .partnership-form input[type=text]:active, .partnership-form input[type=tel]:focus, .partnership-form input[type=tel]:active, .partnership-form input[type=number]:focus, .partnership-form input[type=number]:active, .partnership-form textarea:focus, .partnership-form textarea:active {
+.partnership-form input[type=text]:focus, .partnership-form input[type=text]:active, .partnership-form input[type=tel]:focus, .partnership-form input[type=tel]:active, .partnership-form input[type=number]:focus, .partnership-form input[type=number]:active, .partnership-form textarea:focus, .partnership-form textarea:active, .faq-form input[type=text]:focus, .faq-form input[type=text]:active, .faq-form input[type=tel]:focus, .faq-form input[type=tel]:active, .faq-form input[type=number]:focus, .faq-form input[type=number]:active, .faq-form textarea:focus, .faq-form textarea:active {
   background: rgb(255, 255, 255);
 }
-.partnership-form input[type=text]::-webkit-input-placeholder, .partnership-form input[type=tel]::-webkit-input-placeholder, .partnership-form input[type=number]::-webkit-input-placeholder, .partnership-form textarea::-webkit-input-placeholder {
+.partnership-form input[type=text]::-webkit-input-placeholder, .partnership-form input[type=tel]::-webkit-input-placeholder, .partnership-form input[type=number]::-webkit-input-placeholder, .partnership-form textarea::-webkit-input-placeholder, .faq-form input[type=text]::-webkit-input-placeholder, .faq-form input[type=tel]::-webkit-input-placeholder, .faq-form input[type=number]::-webkit-input-placeholder, .faq-form textarea::-webkit-input-placeholder {
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
   color: #797979;
   font-family: "Roboto", sans-serif;
 }
-.partnership-form input[type=text]::-moz-placeholder, .partnership-form input[type=tel]::-moz-placeholder, .partnership-form input[type=number]::-moz-placeholder, .partnership-form textarea::-moz-placeholder {
+.partnership-form input[type=text]::-moz-placeholder, .partnership-form input[type=tel]::-moz-placeholder, .partnership-form input[type=number]::-moz-placeholder, .partnership-form textarea::-moz-placeholder, .faq-form input[type=text]::-moz-placeholder, .faq-form input[type=tel]::-moz-placeholder, .faq-form input[type=number]::-moz-placeholder, .faq-form textarea::-moz-placeholder {
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
   color: #797979;
   font-family: "Roboto", sans-serif;
 }
-.partnership-form input[type=text]:-ms-input-placeholder, .partnership-form input[type=tel]:-ms-input-placeholder, .partnership-form input[type=number]:-ms-input-placeholder, .partnership-form textarea:-ms-input-placeholder {
+.partnership-form input[type=text]:-ms-input-placeholder, .partnership-form input[type=tel]:-ms-input-placeholder, .partnership-form input[type=number]:-ms-input-placeholder, .partnership-form textarea:-ms-input-placeholder, .faq-form input[type=text]:-ms-input-placeholder, .faq-form input[type=tel]:-ms-input-placeholder, .faq-form input[type=number]:-ms-input-placeholder, .faq-form textarea:-ms-input-placeholder {
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
   color: #797979;
   font-family: "Roboto", sans-serif;
 }
-.partnership-form input[type=text]::-ms-input-placeholder, .partnership-form input[type=tel]::-ms-input-placeholder, .partnership-form input[type=number]::-ms-input-placeholder, .partnership-form textarea::-ms-input-placeholder {
+.partnership-form input[type=text]::-ms-input-placeholder, .partnership-form input[type=tel]::-ms-input-placeholder, .partnership-form input[type=number]::-ms-input-placeholder, .partnership-form textarea::-ms-input-placeholder, .faq-form input[type=text]::-ms-input-placeholder, .faq-form input[type=tel]::-ms-input-placeholder, .faq-form input[type=number]::-ms-input-placeholder, .faq-form textarea::-ms-input-placeholder {
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
   color: #797979;
   font-family: "Roboto", sans-serif;
 }
-.partnership-form input[type=text]::placeholder, .partnership-form input[type=tel]::placeholder, .partnership-form input[type=number]::placeholder, .partnership-form textarea::placeholder {
+.partnership-form input[type=text]::placeholder, .partnership-form input[type=tel]::placeholder, .partnership-form input[type=number]::placeholder, .partnership-form textarea::placeholder, .faq-form input[type=text]::placeholder, .faq-form input[type=tel]::placeholder, .faq-form input[type=number]::placeholder, .faq-form textarea::placeholder {
   font-weight: 300;
   font-size: 14px;
   line-height: 14px;
@@ -8820,37 +8855,37 @@ body textarea:focus-visible {
   font-family: "Roboto", sans-serif;
 }
 @media screen and (min-width: 768px) {
-  .partnership-form input[type=text], .partnership-form input[type=tel], .partnership-form input[type=number], .partnership-form textarea {
+  .partnership-form input[type=text], .partnership-form input[type=tel], .partnership-form input[type=number], .partnership-form textarea, .faq-form input[type=text], .faq-form input[type=tel], .faq-form input[type=number], .faq-form textarea {
     border-radius: 40px;
     padding: 24px 29px;
     background: rgba(255, 255, 255, 0.8);
     font-size: 16px;
   }
-  .partnership-form input[type=text]::-webkit-input-placeholder, .partnership-form input[type=tel]::-webkit-input-placeholder, .partnership-form input[type=number]::-webkit-input-placeholder, .partnership-form textarea::-webkit-input-placeholder {
+  .partnership-form input[type=text]::-webkit-input-placeholder, .partnership-form input[type=tel]::-webkit-input-placeholder, .partnership-form input[type=number]::-webkit-input-placeholder, .partnership-form textarea::-webkit-input-placeholder, .faq-form input[type=text]::-webkit-input-placeholder, .faq-form input[type=tel]::-webkit-input-placeholder, .faq-form input[type=number]::-webkit-input-placeholder, .faq-form textarea::-webkit-input-placeholder {
     font-size: 16px;
   }
-  .partnership-form input[type=text]::-moz-placeholder, .partnership-form input[type=tel]::-moz-placeholder, .partnership-form input[type=number]::-moz-placeholder, .partnership-form textarea::-moz-placeholder {
+  .partnership-form input[type=text]::-moz-placeholder, .partnership-form input[type=tel]::-moz-placeholder, .partnership-form input[type=number]::-moz-placeholder, .partnership-form textarea::-moz-placeholder, .faq-form input[type=text]::-moz-placeholder, .faq-form input[type=tel]::-moz-placeholder, .faq-form input[type=number]::-moz-placeholder, .faq-form textarea::-moz-placeholder {
     font-size: 16px;
   }
-  .partnership-form input[type=text]:-ms-input-placeholder, .partnership-form input[type=tel]:-ms-input-placeholder, .partnership-form input[type=number]:-ms-input-placeholder, .partnership-form textarea:-ms-input-placeholder {
+  .partnership-form input[type=text]:-ms-input-placeholder, .partnership-form input[type=tel]:-ms-input-placeholder, .partnership-form input[type=number]:-ms-input-placeholder, .partnership-form textarea:-ms-input-placeholder, .faq-form input[type=text]:-ms-input-placeholder, .faq-form input[type=tel]:-ms-input-placeholder, .faq-form input[type=number]:-ms-input-placeholder, .faq-form textarea:-ms-input-placeholder {
     font-size: 16px;
   }
-  .partnership-form input[type=text]::-ms-input-placeholder, .partnership-form input[type=tel]::-ms-input-placeholder, .partnership-form input[type=number]::-ms-input-placeholder, .partnership-form textarea::-ms-input-placeholder {
+  .partnership-form input[type=text]::-ms-input-placeholder, .partnership-form input[type=tel]::-ms-input-placeholder, .partnership-form input[type=number]::-ms-input-placeholder, .partnership-form textarea::-ms-input-placeholder, .faq-form input[type=text]::-ms-input-placeholder, .faq-form input[type=tel]::-ms-input-placeholder, .faq-form input[type=number]::-ms-input-placeholder, .faq-form textarea::-ms-input-placeholder {
     font-size: 16px;
   }
-  .partnership-form input[type=text]::placeholder, .partnership-form input[type=tel]::placeholder, .partnership-form input[type=number]::placeholder, .partnership-form textarea::placeholder {
+  .partnership-form input[type=text]::placeholder, .partnership-form input[type=tel]::placeholder, .partnership-form input[type=number]::placeholder, .partnership-form textarea::placeholder, .faq-form input[type=text]::placeholder, .faq-form input[type=tel]::placeholder, .faq-form input[type=number]::placeholder, .faq-form textarea::placeholder {
     font-size: 16px;
   }
 }
-.partnership-form textarea {
+.partnership-form textarea, .faq-form textarea {
   height: 82px;
 }
 @media screen and (min-width: 768px) {
-  .partnership-form textarea {
+  .partnership-form textarea, .faq-form textarea {
     height: 146px;
   }
 }
-.partnership-form div {
+.partnership-form div, .faq-form div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8861,11 +8896,11 @@ body textarea:focus-visible {
   width: 100%;
   margin-bottom: 14px;
 }
-.partnership-form div:nth-child(3) {
+.partnership-form div:nth-child(3), .faq-form div:nth-child(3) {
   margin-bottom: 48px;
 }
 @media screen and (min-width: 768px) {
-  .partnership-form div {
+  .partnership-form div, .faq-form div {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -8874,11 +8909,11 @@ body textarea:focus-visible {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .partnership-form div:nth-child(3) {
+  .partnership-form div:nth-child(3), .faq-form div:nth-child(3) {
     margin-bottom: 14px;
   }
 }
-.partnership-form div strong {
+.partnership-form div strong, .faq-form div strong {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8888,7 +8923,7 @@ body textarea:focus-visible {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.partnership-form div strong em {
+.partnership-form div strong em, .faq-form div strong em {
   padding: 7px 12px 0;
   color: #EE2536;
   font-weight: 300;
@@ -8896,35 +8931,35 @@ body textarea:focus-visible {
   line-height: 12px;
 }
 @media screen and (min-width: 768px) {
-  .partnership-form div strong em {
+  .partnership-form div strong em, .faq-form div strong em {
     font-size: 14px;
     line-height: 14px;
     color: #fff;
     padding: 7px 29px 0;
   }
 }
-.partnership-form div > span {
+.partnership-form div > span, .faq-form div > span {
   -webkit-box-flex: unset;
       -ms-flex: unset;
           flex: unset;
   margin-bottom: 14px;
 }
-.partnership-form div > span:last-child {
+.partnership-form div > span:last-child, .faq-form div > span:last-child {
   margin-bottom: 0;
 }
 @media screen and (min-width: 768px) {
-  .partnership-form div > span {
+  .partnership-form div > span, .faq-form div > span {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(50% - 14px);
             flex: 0 0 calc(50% - 14px);
     margin-bottom: 0;
     margin-right: 14px;
   }
-  .partnership-form div > span:last-child {
+  .partnership-form div > span:last-child, .faq-form div > span:last-child {
     margin-right: 0;
   }
 }
-.partnership-form button[type=submit] {
+.partnership-form button[type=submit], .faq-form button[type=submit] {
   width: 80%;
   margin: 0 auto;
   background-color: #EE2536;
@@ -8941,7 +8976,7 @@ body textarea:focus-visible {
   border-radius: 20px;
 }
 @media screen and (min-width: 768px) {
-  .partnership-form button[type=submit] {
+  .partnership-form button[type=submit], .faq-form button[type=submit] {
     margin: unset;
     width: 60%;
     padding: 15px 20px;
@@ -9310,6 +9345,107 @@ body textarea:focus-visible {
     height: 100%;
     position: relative;
     min-height: calc(var(--faq-titles) + 2 * var(--box-x-pad) + var(--title-head-margin));
+  }
+}
+.faq.faq-section {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 16px 13px;
+}
+@media screen and (min-width: 768px) {
+  .faq.faq-section {
+    padding: var(--box-x-pad);
+  }
+}
+.faq.faq-section .faq__titles {
+  margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+  .faq.faq-section .faq__titles {
+    position: static;
+    height: unset;
+    margin-bottom: unset;
+    min-height: unset;
+  }
+}
+.faq.faq-section .faq__choosen__toggle {
+  border: 1px solid #EE2742;
+  border-radius: 20px;
+  color: #EE2742;
+  letter-spacing: 0.05em;
+  text-align: left;
+  line-height: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding: 4px 5px;
+  padding-left: 14px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .faq.faq-section .faq__choosen__toggle {
+    display: none;
+  }
+}
+.faq.faq-section .faq__choosen__toggle._open-faq-heads .faq__choosen__open__toggle svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.faq.faq-section .faq__choosen__open__toggle {
+  border: 1px solid #EE2742;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+}
+.faq.faq-section .faq__choosen__open__toggle svg {
+  width: 7.2px;
+  height: auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+  .faq.faq-section .toggle-section-head__faq {
+    -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    display: block;
+    background-color: #fff;
+    padding: 20px 12px;
+  }
+  .faq.faq-section .toggle-section-head__faq .toggle-section-head__item {
+    color: #000000;
+    text-shadow: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: transparent;
+    text-align: left;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .faq.faq-section .toggle-section-head__faq .toggle-section-head__item._active-page {
+    text-decoration: none;
+    color: #EE2742;
+    background-color: #EDF7F3;
   }
 }
 .faq__titles {
@@ -10293,5 +10429,289 @@ body textarea:focus-visible {
   .swiper-same-projects__napryamki .project-card-head {
     font-size: 18px;
     line-height: 20px;
+  }
+}
+
+.last-news .last-news-card {
+  position: relative;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+  grid-template-columns: 100%;
+  -ms-grid-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.last-news .last-news-card > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.last-news .last-news-card > *:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+
+.last-news .last-news-card > *:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+.last-news .last-news-card__bg {
+  position: relative;
+  z-index: 1;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+.last-news .last-news-card__bg::before {
+  content: "";
+  padding-top: 50%;
+  width: 100%;
+  display: block;
+}
+@media screen and (min-width: 1024px) {
+  .last-news .last-news-card__bg::before {
+    padding-top: 45.6%;
+  }
+}
+.last-news .last-news-card__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.last-news .last-news-card__content {
+  position: relative;
+  z-index: 2;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  padding: 1.5rem 0.75rem 3rem;
+  padding-right: var(--x-pad);
+  padding-left: var(--x-pad);
+}
+@media screen and (min-width: 1280px) {
+  .last-news .last-news-card__content {
+    padding-bottom: 6rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+.last-news .last-news-card__title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .last-news .last-news-card__title {
+    font-size: 18px;
+  }
+}
+.last-news .last-news-card__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  max-width: 512px;
+  width: 100%;
+}
+.last-news .last-news-card__date {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 12px;
+}
+@media screen and (min-width: 768px) {
+  .last-news .last-news-card__date {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 36px;
+    margin-bottom: 19px;
+  }
+}
+.last-news .last-news-card__text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .last-news .last-news-card__text {
+    margin-bottom: 50px;
+    font-size: 48px;
+    line-height: 50px;
+  }
+}
+.last-news .last-news-card__btn__more {
+  max-width: 124px;
+  background: #EE2742;
+  border-radius: 18px;
+  padding: 12px 11px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .last-news .last-news-card__btn__more {
+    max-width: 155px;
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+}
+
+.swiper-last-news {
+  height: 420px;
+}
+@media screen and (min-width: 1024px) {
+  .swiper-last-news {
+    height: 100%;
+  }
+}
+.swiper-last-news .last-news__btns__container {
+  z-index: 4;
+  top: unset;
+  bottom: calc(var(--x-pad) * 0.75);
+}
+.swiper-last-news .last-news__btns__container .swiper-button-prev, .swiper-last-news .last-news__btns__container .swiper-button-next {
+  border-color: #fff;
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%);
+}
+.swiper-last-news .last-news__btns__container .swiper-button-prev:hover, .swiper-last-news .last-news__btns__container .swiper-button-next:hover {
+  border-color: #EE2742;
+}
+.faq__form__container {
+  background-color: #EE2536;
+}
+.faq__form__container .separate-section-card {
+  background-color: #EE2536;
+}
+@media screen and (min-width: 768px) {
+  .faq__form__container .separate-section-card {
+    max-width: 664px;
+    margin: 0 auto;
+  }
+}
+.faq__form__container .separate-section__title {
+  color: #fff;
+}
+.faq__form__container .faq-form input[type=text], .faq__form__container .faq-form input[type=tel], .faq__form__container .faq-form input[type=number], .faq__form__container .faq-form textarea {
+  background: rgba(255, 255, 255, 0.8);
+}
+.faq__form__container .faq-form div strong em {
+  color: #fff;
+}
+.faq__form__container .faq-form button[type=submit] {
+  background-color: #fff;
+  color: #EE2536;
+}
+
+.faq-header .rubric-head {
+  margin-bottom: 9px;
+}
+@media screen and (min-width: 768px) {
+  .faq-header .rubric-head {
+    margin-bottom: 22px;
+  }
+}
+.faq-header__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 26px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .faq-header__title {
+    font-size: 48px;
+    line-height: 50px;
+  }
+}
+.faq-header__subtitle {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 23px;
+  color: #000000;
+}
+.faq-header__subtitle a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.faq-header__subtitle a:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .faq-header__subtitle {
+    font-size: 21px;
+    line-height: 26px;
+    margin-bottom: 43px;
+  }
+}
+.faq-header__btn {
+  color: #fff;
+  background: #EE2536;
+  border-radius: 24px;
+  padding: 13px 25px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.faq-header__btn:hover {
+  background-color: #fff;
+  border-color: #EE2536;
+  color: #EE2536;
+}
+@media screen and (min-width: 768px) {
+  .faq-header__btn {
+    padding: 13px 33px;
   }
 }
