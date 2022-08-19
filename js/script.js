@@ -50,6 +50,7 @@ $(document).ready(function () {
     activateToggleSection('.parthner-page-help')
     activateToggleSection('.main-section-form')
     activateToggleSection('.faq')
+    activateToggleSection('.toggle-section__profile')
 
     //faq
     const faqTitleHeight = $('.toggle-section-head__faq').height()
@@ -113,6 +114,160 @@ $(document).ready(function () {
         })
     }
     
+
+    //login
+    let isPasswordVisible = false
+    $('.login-form__password__label').click(function(e){
+        $(this).toggleClass('_show-password')
+        isPasswordVisible = !isPasswordVisible
+
+        if(isPasswordVisible){
+            $(this).prev().attr('type', 'text')
+        } else {
+            $(this).prev().attr('type', 'password')
+        }
+    })
+
+    let isPasswordVisiblePrivate = false
+    $('.login-form__password__label__private').click(function(e){
+        
+        isPasswordVisiblePrivate = !isPasswordVisiblePrivate
+
+        if(isPasswordVisiblePrivate){
+            $('.private-info-parameters__password input').attr('type', 'text')
+            $('.login-form__password__label__private').addClass('_show-password')
+        } else {
+            $('.private-info-parameters__password input').attr('type', 'password')
+            $('.login-form__password__label__private').removeClass('_show-password')
+        }
+    })
+
+    // const logInputs = Array.from(document.querySelectorAll('.login-form input'))
+    // const btnSubmit = document.querySelector('.login-form button[type=submit]')
+
+    // if(logInputs && btnSubmit) {
+    //     logInputs.forEach(item => {
+    //         item.addEventListener('change', verifyValidInput)
+    //     })
+
+    //     function verifyValidInput(e){
+    //         console.log(e.target.value);
+    //         if(e.target.value.trim()){
+    //             btnSubmit.classList.remove('button-disable')
+                
+    //         }else{
+
+    //             btnSubmit.classList.add('button-disable')
+    //         }
+    //     }
+    // }
+
+    //end login
+
+    //profile-general show values mob
+    if (document.documentElement.clientWidth < 768){
+
+        toggleProjectValues('.general-info', '.values__mob.separate-section-values__projects')
+        toggleProjectValues('.general-info', '.values__mob.separate-section-values__history')
+        toggleProjectValues('.profile-projects ','.separate-section-values__projects')
+        toggleProjectValues('.profile-projects ','.separate-section-values__money')
+
+        function toggleProjectValues(parent, section){
+            $(`${parent} .separate-section-values${section} .separate-section-values__list`).slideUp()
+
+            $(`${parent} .separate-section-values${section} .separate-section-values__total`).click(function(e){
+                $(`${parent} .separate-section-values${section} .separate-section-values__list`).slideToggle(300)
+                $(this).children('.separate-section-values__label__open').toggleClass('_opened-values')
+            })
+        }
+    }
+
+    //card profile-private
+    $('.private-info__front .private-info__edit').click(function(e){
+        e.preventDefault()
+
+        $('.private-info__card ').addClass('_turn-card')
+    })
+    $('.private-info__back .private-info__edit').click(function(e){
+        e.preventDefault()
+
+        $('.private-info__card ').removeClass('_turn-card')
+    })
+
+    if (document.documentElement.clientWidth > 767){
+
+        const labelPass = document.querySelectorAll('.private-info-parameters__password .private-info-parameters__title')
+        
+        if(labelPass.length > 0){
+            labelPass[0].innerHTML = 'Пароль'
+        }
+    }
+
+    //profile-projects
+    $(".profile-projects-table__field.profile-projects-table__detail").slideUp()
+
+    $('.profile-projects-table__field__mob').click(function(e){
+        $(this).toggleClass('_active-field')
+        $(this).next().slideToggle(300)
+
+        $('.profile-projects-table__field__mob').not( $(this)).removeClass('_active-field')
+        $('.profile-projects-table__field.profile-projects-table__detail').not( $(this).next()).slideUp(300)
+    })
+
+    $('.profile-projects-table__detail .profile-projects-table__more__close').click(function(e){
+        //console.log(1);
+        $(this).parent('.profile-projects-detail').parent('.profile-projects-table__detail').slideUp(300)
+        $(this).parent('.profile-projects-detail').parent('.profile-projects-table__detail').prev().removeClass('_active-field')
+
+
+    })
+
+    $('.profile-projects-table__field.profile-projects-table__more .profile-projects-table__more__close').fadeOut(0)
+    $('.profile-projects-table__field.profile-projects-table__more').click(function(e){
+        $(this).next().next().slideToggle(300)
+        $(this).children('.profile-projects-table__more__close').fadeToggle(0)
+        $(this).children('.profile-projects-table__more__open').fadeToggle(0)
+
+        $(".profile-projects-table__field.profile-projects-table__detail").not($(this).next().next()).slideUp()
+        $('.profile-projects-table__more__close').not($(this).children('.profile-projects-table__more__close')).fadeOut(0)
+        $('.profile-projects-table__more__open').not($(this).children('.profile-projects-table__more__open')).fadeIn(0)
+
+    })
+
+
+    //create project
+
+    //steps toggle
+    $('.create-project-form__item').not($('.create-project-form__item._active-step')).fadeOut(0)
+
+    $('.create-project-form__btn__next').click(function(e){
+        const goStep = $(this).attr('data-step')
+        //const stepLabel = $(`.create-project-steps__item`).attr()
+
+        if(goStep){
+            $('.create-project-form__item').fadeOut(300)
+            $(`.create-project-form__item${goStep}`).fadeIn(300)
+            $(`.create-project-form__item${goStep}`).addClass('_active-step')
+
+            $('.create-project-steps__item').removeClass('_active-step')
+            $(`.create-project-steps__item${goStep}`).addClass('_active-step')
+
+        }
+    })
+    $('.create-project-steps__item').click(function(e){
+        const goStep = $(this).attr('data-step')
+        //const stepLabel = $(`.create-project-steps__item`).attr()
+
+        if(goStep){
+            $('.create-project-form__item').fadeOut(300)
+            $(`.create-project-form__item${goStep}`).fadeIn(300)
+            $(`.create-project-form__item${goStep}`).addClass('_active-step')
+
+            $('.create-project-steps__item').removeClass('_active-step')
+            $(`.create-project-steps__item${goStep}`).addClass('_active-step')
+
+        }
+    })
 
     //swipers
     let mainBannerSwiper = new Swiper('.swiper.swiper-main-slider', {
