@@ -349,7 +349,7 @@ $(document).ready(function () {
 
             if(section.includes('document')){
                     //sectionFile.classList.remove('_image-default')
-                blah.src = '../img/profile/label-document.svg'
+                blah.src = './img/profile/label-document.svg'
                 return
             }
 
