@@ -234,8 +234,57 @@ $(document).ready(function () {
 
     })
 
+    //profile my projects mob
+
+    if (document.documentElement.clientWidth < 768){
+        $(".profile-my-project .separate-section-bottom .separate-section-bottom__performer").slideUp()
+        $(".profile-my-project .separate-section-bottom .separate-section-bottom-money").slideUp()
+        $(".profile-my-project .separate-section-bottom .separate-section-bottom__more__close").slideUp()
+        $(".profile-my-project .separate-section-header .separate-section-header__text__block").slideUp()
+
+        $('.profile-my-project .separate-section-header .separate-section-header__two__columns').click(function(e){
+            $(this).toggleClass('_active-field')
+            $(this).parent().next().children(".profile-my-project .separate-section-bottom .separate-section-bottom__performer").slideToggle(300)
+            $(this).parent().next().children(".profile-my-project .separate-section-bottom .separate-section-bottom-money").slideToggle(300)
+            $(this).parent().next().children(".profile-my-project .separate-section-bottom .separate-section-bottom__more__close").slideToggle(300)
+            $(this).next().slideToggle(300)
+
+            $('.profile-my-project .separate-section-header .separate-section-header__two__columns').not( $(this)).removeClass('_active-field')
+            $('.profile-my-project .separate-section-bottom .separate-section-bottom__performer').not( $(this).parent().next().children(".profile-my-project .separate-section-bottom .separate-section-bottom__performer")).slideUp(300)
+            $('.profile-my-project .separate-section-bottom .separate-section-bottom-money').not( $(this).parent().next().children(".profile-my-project .separate-section-bottom .separate-section-bottom-money")).slideUp(300)
+            $('.profile-my-project .separate-section-bottom .separate-section-bottom__more__close').not( $(this).parent().next().children(".profile-my-project .separate-section-bottom .separate-section-bottom__more__close")).slideUp(300)
+            $('.profile-my-project .separate-section-header .separate-section-header__text__block').not( $(this).next()).slideUp(300)
+        })
+
+
+        $('.profile-my-project .separate-section-bottom .separate-section-bottom__more__close').click(function(e){
+            //console.log(1);
+            $(this).parent().prev().children('.separate-section-header__two__columns').removeClass('_active-field')
+            $(this).slideUp(300)
+
+            $(this).prev().slideUp(300)
+            $(this).prev().prev().prev().slideUp(300)
+
+            $(this).parent().prev().children('.separate-section-header__text__block').slideUp(300)
+    
+    
+        })
+    }
+
 
     //create project
+
+    //toogle create
+    if (document.documentElement.clientWidth < 768){
+        $('.create-project-steps').fadeOut(0)
+        $('.create-project-form').slideUp(0)
+
+        $('.create-project__title.title__mob').click(function(e){
+            $(this).children('.create-project__label__open').toggleClass('_opened-values')
+            $('.create-project-steps').fadeToggle(300)
+            $('.create-project-form').slideToggle(300)
+        })
+    }
 
     //steps toggle
     $('.create-project-form__item').not($('.create-project-form__item._active-step')).fadeOut(0)
@@ -268,6 +317,119 @@ $(document).ready(function () {
 
         }
     })
+
+    //input file show img
+    const sectionFile = document.querySelector('.create-project-form__file._add-parthner-0')
+    const sectionFileDocument = document.querySelector('.create-project-form__file._add-document-0')
+    const sectionFilePhoto = document.querySelector('.create-project-form__file.create-project-form__file__photo')
+    
+    //console.log(sectionFile);
+    
+    if(sectionFile){
+        makePreviewImg(sectionFile)
+    }
+    if(sectionFileDocument){
+        makePreviewImg(sectionFileDocument)
+    }
+    if(sectionFilePhoto){
+        makePreviewImg(sectionFilePhoto)
+    }
+
+    function makePreviewImg(sectionFile){
+        
+        let section = sectionFile.classList[1]
+       // console.log(section);
+
+        const imgInp = document.querySelector(`.${section} input`)
+        const blah = document.querySelector(`.${section} img`)
+        
+        
+
+        imgInp.onchange = evt => {
+
+            if(section.includes('document')){
+                    //sectionFile.classList.remove('_image-default')
+                blah.src = '../img/profile/label-document.svg'
+                return
+            }
+
+            sectionFile.classList.remove('_image-default')
+            const [file] = imgInp.files
+            if (file) {
+
+                blah.src = URL.createObjectURL(file)
+            }
+        }
+    }
+
+    //add more btn
+    let counter = 1
+    $('.create-project-form__added__more').click(addedInput)
+
+    function addedInput(e){
+        const filesList = $(e.currentTarget).parent().attr('data-list')
+        const containerClass = $(e.currentTarget).parent()[0].classList[1]
+        const counter = $(e.currentTarget).parent().children().length
+
+        //console.log( $(e.currentTarget).parent()[0].classList[1]);
+
+        let labelText
+
+        if(filesList === 'parthner'){
+            labelText = 'Ім’я партнера'
+        }else{ 
+            labelText = 'Назва документу'
+        }
+
+        $(
+            `
+            <div class="create-project-form__added__item">
+                <div class="create-project-form__file _add-${filesList}-${counter} _image-default">
+                    <input type="file" name="${filesList}-${counter}" id="${filesList}-${counter}">
+                    <label for="${filesList}-${counter}">
+                        <div>
+                            <img ${
+                                filesList === 'parthner' && `src="./img/profile/label-logo-parthner.svg"`
+                            } ${
+                                filesList === 'document' && `src="./img/profile/label-add-grey-2.svg"`
+                            } alt=""/>
+                            
+                            
+                        </div>
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12.6973" cy="12.0439" r="12" fill="#EE2742"/>
+                            <path d="M16.1084 11.1621V12.7686H9.28613V11.1621H16.1084ZM13.5654 8.4209V15.667H11.8359V8.4209H13.5654Z" fill="white"/>
+                        </svg>
+                    </label>
+                </div>
+                <div class="create-project-form__input__container">
+                
+                    <p class="create-project-form__label">
+                        ${
+                            labelText
+                        }
+                        
+                    </p>
+                    <input 
+                        type="text" 
+                        name="project-${filesList} project-${filesList}-${counter}" 
+                        ${
+                            filesList === 'parthner' && "placeholder='Ім’я партнера'"
+                        }
+                        ${
+                            filesList === 'document' && "placeholder='Назва документу'"
+                        }
+                        >
+                </div>
+            </div>
+            `
+        ).insertBefore(`.${containerClass} .${e.currentTarget.classList[0]}`)
+
+        //console.log($(`._add-${filesList}-${counter}`)[0])
+        //if(filesList !== 'document')
+        makePreviewImg($(`._add-${filesList}-${counter}`)[0])
+    }
+
 
     //swipers
     let mainBannerSwiper = new Swiper('.swiper.swiper-main-slider', {
