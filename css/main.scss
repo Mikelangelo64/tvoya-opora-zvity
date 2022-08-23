@@ -2329,6 +2329,7 @@ body {
             border-color: #000;
           }
           &:focus{
+            color: #000;
             background-color: transparent;
           }
         }
@@ -6343,10 +6344,17 @@ body {
       }
 
       &:hover{
-        color: #EE2536;
+        //color: #EE2536;
         a{
-          background-color: #fff;
-          border-color: #EE2536;
+          background-color: #FC475F;
+          border-color: #FC475F;
+        }
+      }
+      &:focus{
+        //color: #EE2536;
+        a{
+          background-color: #DE1631;
+          border-color: #DE1631;
         }
       }
 
@@ -7345,6 +7353,7 @@ body {
               background-color: transparent;
             }
             &:focus{
+              color: #879E95;
               background-color: transparent;
             }
           }
@@ -8322,9 +8331,11 @@ body {
         
 
         &:hover{
+          color: #879E95;
           background-color: transparent;
         }
         &:focus{
+          color: #879E95;
           background-color: transparent;
         }
 
@@ -8411,6 +8422,9 @@ body {
       color: #EE2536;
 
       &:hover{
+        color: #fff;
+      }
+      &:focus{
         color: #fff;
       }
     }
@@ -9060,10 +9074,18 @@ body {
           justify-content: flex-start;
           transition: all .3s ease;
 
+          &:focus{
+            color: #000000;
+          }
+
           &._active-page {
             text-decoration: none;
             color: #EE2742;
             background-color: #EDF7F3;
+
+            &:focus{
+              color: #EE2742;
+            }
           }
         }
       }
@@ -9175,6 +9197,7 @@ body {
         text-decoration: underline;
       }
       &:focus{
+        color: #000000;
         background-color: transparent;
       }
     }
@@ -9186,6 +9209,9 @@ body {
       &:hover{
         background-color: transparent;
         color: #000;
+      }
+      &:focus{
+        background-color: transparent;
       }
     }
   }
@@ -9330,6 +9356,7 @@ body {
       border-color: #fff;
     }
     &:focus{
+      color: #fff;
       background-color: transparent;
     }
 

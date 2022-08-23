@@ -2866,6 +2866,7 @@ body select:focus-visible {
     border-color: #000;
   }
   .main-section-form .separate-section-card .toggle-section-head__item._active-page:focus {
+    color: #000;
     background-color: transparent;
   }
   .main-section-form .separate-section-card .parthner-page-help-form {
@@ -7903,12 +7904,13 @@ body select:focus-visible {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.separate-section.project-detail-info .separate-section__help__btn:hover {
-  color: #EE2536;
-}
 .separate-section.project-detail-info .separate-section__help__btn:hover a {
-  background-color: #fff;
-  border-color: #EE2536;
+  background-color: #FC475F;
+  border-color: #FC475F;
+}
+.separate-section.project-detail-info .separate-section__help__btn:focus a {
+  background-color: #DE1631;
+  border-color: #DE1631;
 }
 @media screen and (min-width: 768px) {
   .separate-section.project-detail-info .separate-section__help__btn {
@@ -8913,6 +8915,7 @@ body select:focus-visible {
     background-color: transparent;
   }
   .separate-section.about-project .toggle-section-head .toggle-section-head__item:focus {
+    color: #879E95;
     background-color: transparent;
   }
 }
@@ -9881,9 +9884,11 @@ body select:focus-visible {
   }
 }
 .toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item:hover {
+  color: #879E95;
   background-color: transparent;
 }
 .toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item:focus {
+  color: #879E95;
   background-color: transparent;
 }
 .toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item._active-page {
@@ -9967,6 +9972,9 @@ body select:focus-visible {
   color: #EE2536;
 }
 .toggle-section-head .toggle-section-head__item._active-page:hover {
+  color: #fff;
+}
+.toggle-section-head .toggle-section-head__item._active-page:focus {
   color: #fff;
 }
 
@@ -10632,10 +10640,16 @@ body select:focus-visible {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
+  .faq.faq-section .toggle-section-head__faq .toggle-section-head__item:focus {
+    color: #000000;
+  }
   .faq.faq-section .toggle-section-head__faq .toggle-section-head__item._active-page {
     text-decoration: none;
     color: #EE2742;
     background-color: #EDF7F3;
+  }
+  .faq.faq-section .toggle-section-head__faq .toggle-section-head__item._active-page:focus {
+    color: #EE2742;
   }
 }
 .faq__titles {
@@ -10756,6 +10770,7 @@ body select:focus-visible {
     text-decoration: underline;
   }
   .toggle-section-head__faq .toggle-section-head__item:focus {
+    color: #000000;
     background-color: transparent;
   }
 }
@@ -10767,6 +10782,9 @@ body select:focus-visible {
 .toggle-section-head__faq .toggle-section-head__item._active-page:hover {
   background-color: transparent;
   color: #000;
+}
+.toggle-section-head__faq .toggle-section-head__item._active-page:focus {
+  background-color: transparent;
 }
 .accordion .accordion-item {
   display: -webkit-box;
@@ -10893,6 +10911,7 @@ body select:focus-visible {
   border-color: #fff;
 }
 .toggle-section__donate .toggle-section-head__item:focus {
+  color: #fff;
   background-color: transparent;
 }
 .toggle-section__donate .toggle-section-head__item._active-page {
