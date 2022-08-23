@@ -1579,7 +1579,15 @@ body select:focus-visible {
 }
 
 .social-icon {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 24px;
   height: 24px;
   border: 1px solid var(--color-secondary);
@@ -1587,10 +1595,34 @@ body select:focus-visible {
   border-radius: 50%;
   font-size: 0;
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.social-icon svg {
+  max-width: 20px;
+}
+.social-icon svg path {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+.social-icon:hover svg path {
+  fill: #EE2742;
+}
+.social-icon:focus {
+  background-color: #AA0017;
+  border-color: #AA0017;
+  color: #fff;
+}
+.social-icon:focus svg path {
+  fill: #EE2742;
 }
 
 .social-icon::before {
-  display: block;
+  display: none;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1844,6 +1876,16 @@ body select:focus-visible {
   border: 1px solid var(--color-accent);
   border-radius: 18px;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header-help-btn:hover {
+  background-color: #EE2742;
+  color: #fff;
+}
+.header-help-btn:focus {
+  background-color: #DE1631;
+  color: #fff;
 }
 
 .header-nav {
@@ -2394,6 +2436,9 @@ body select:focus-visible {
 .footer-social {
   margin-top: 2rem;
 }
+.footer-social .social-icon svg {
+  max-width: 17px;
+}
 
 .footer-info {
   margin-top: 2.75rem;
@@ -2807,6 +2852,9 @@ body select:focus-visible {
     background-color: transparent;
     border-color: #879E95;
   }
+  .main-section-form .separate-section-card .toggle-section-head__item:focus {
+    background-color: transparent;
+  }
   .main-section-form .separate-section-card .toggle-section-head__item._active-page {
     color: #000;
     border-color: #000;
@@ -2816,6 +2864,9 @@ body select:focus-visible {
     color: #000;
     background-color: transparent;
     border-color: #000;
+  }
+  .main-section-form .separate-section-card .toggle-section-head__item._active-page:focus {
+    background-color: transparent;
   }
   .main-section-form .separate-section-card .parthner-page-help-form {
     -webkit-box-orient: vertical;
@@ -2932,8 +2983,15 @@ body select:focus-visible {
 }
 @media screen and (min-width: 768px) {
   .main-section-form .separate-section-card .money-form button[type=submit]:hover {
-    border-color: #EE2742;
-    background-color: #EE2742;
+    border-color: #FC475F;
+    background-color: #FC475F;
+    color: #fff;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main-section-form .separate-section-card .money-form button[type=submit]:focus {
+    border-color: #DE1631;
+    background-color: #DE1631;
     color: #fff;
   }
 }
@@ -5100,7 +5158,13 @@ body select:focus-visible {
 .donor-download-more:hover, .project-list-parthner-page-more:hover, .project-list-projects-more:hover,
 .my-projects__list__download__more:hover {
   color: #fff;
-  background-color: #EE2536;
+  background-color: #EE2742;
+  border-color: #fff;
+}
+.donor-download-more:focus, .project-list-parthner-page-more:focus, .project-list-projects-more:focus,
+.my-projects__list__download__more:focus {
+  color: #fff;
+  background-color: #DE1631;
   border-color: #fff;
 }
 @media screen and (min-width: 768px) {
@@ -6422,6 +6486,14 @@ body select:focus-visible {
   text-transform: uppercase;
   position: relative;
   font-size: 12px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.howto-card-btn:hover {
+  background-color: #FC475F;
+}
+.howto-card-btn:focus {
+  background-color: #DE1631;
 }
 
 .howto-card-btn::after {
@@ -7329,8 +7401,16 @@ body select:focus-visible {
 }
 .banner-gradient-social .banner-gradient-social__item:hover {
   background-color: #FFF9E6;
+  border-color: #FFF9E6;
 }
 .banner-gradient-social .banner-gradient-social__item:hover svg path {
+  fill: #EE2742;
+}
+.banner-gradient-social .banner-gradient-social__item:focus {
+  background-color: #AA0017;
+  border-color: #AA0017;
+}
+.banner-gradient-social .banner-gradient-social__item:focus svg path {
   fill: #EE2742;
 }
 .banner-gradient-social .banner-gradient-social__item:not(.social__all) {
@@ -7407,9 +7487,14 @@ body select:focus-visible {
   line-height: 18px;
 }
 .banner-gradient__btn:hover {
-  color: #EE2536;
-  background-color: #fff;
-  border-color: #EE2536;
+  color: #fff;
+  background-color: #FC475F;
+  border-color: #FC475F;
+}
+.banner-gradient__btn:focus {
+  color: #fff;
+  background-color: #DE1631;
+  border-color: #DE1631;
 }
 @media screen and (min-width: 768px) {
   .banner-gradient__btn {
@@ -8083,6 +8168,7 @@ body select:focus-visible {
   }
 }
 .separate-section.project-detail-info .separate-section-header-edit {
+  cursor: pointer;
   width: 60px;
   height: 36px;
   display: -webkit-box;
@@ -8111,6 +8197,12 @@ body select:focus-visible {
   background-color: #EE2742;
 }
 .separate-section.project-detail-info .separate-section-header-edit:hover svg path {
+  fill: #fff;
+}
+.separate-section.project-detail-info .separate-section-header-edit:focus {
+  background-color: #DE1631;
+}
+.separate-section.project-detail-info .separate-section-header-edit:focus svg path {
   fill: #fff;
 }
 .separate-section.project-detail-info .separate-section-bottom progress {
@@ -8820,6 +8912,12 @@ body select:focus-visible {
   .separate-section.about-project .toggle-section-head .toggle-section-head__item:hover {
     background-color: transparent;
   }
+  .separate-section.about-project .toggle-section-head .toggle-section-head__item:focus {
+    background-color: transparent;
+  }
+}
+.separate-section.about-project .toggle-section-head .toggle-section-head__item._active-page:focus {
+  background-color: transparent;
 }
 @media screen and (min-width: 768px) {
   .separate-section.about-project .toggle-section-head .toggle-section-head__item._active-page {
@@ -9059,6 +9157,12 @@ body select:focus-visible {
   background-color: #EE2742;
 }
 .separate-section.general-info .separate-section-profile__goto__edit:hover svg path {
+  fill: #fff;
+}
+.separate-section.general-info .separate-section-profile__goto__edit:focus {
+  background-color: #DE1631;
+}
+.separate-section.general-info .separate-section-profile__goto__edit:focus svg path {
   fill: #fff;
 }
 @media screen and (min-width: 768px) {
@@ -9779,9 +9883,15 @@ body select:focus-visible {
 .toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item:hover {
   background-color: transparent;
 }
+.toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item:focus {
+  background-color: transparent;
+}
 .toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item._active-page {
   color: #E51E37;
   border-color: #E51E37;
+}
+.toggle-section.toggle-section__profile .toggle-section-head .toggle-section-head__item._active-page:focus {
+  background-color: transparent;
 }
 
 .toggle-section-head {
@@ -9826,8 +9936,14 @@ body select:focus-visible {
   margin-right: 0;
 }
 .toggle-section-head .toggle-section-head__item:hover {
-  color: #EE2536;
-  border-color: #EE2536;
+  color: #fff;
+  background-color: #EE2742;
+  border-color: #fff;
+}
+.toggle-section-head .toggle-section-head__item:focus {
+  color: #fff;
+  background-color: #DE1631;
+  border-color: #fff;
 }
 @media screen and (min-width: 375px) {
   .toggle-section-head .toggle-section-head__item {
@@ -9852,8 +9968,6 @@ body select:focus-visible {
 }
 .toggle-section-head .toggle-section-head__item._active-page:hover {
   color: #fff;
-  background-color: #EE2536;
-  border-color: #fff;
 }
 
 .partnership-form input[type=text], .partnership-form input[type=tel], .partnership-form input[type=number], .partnership-form textarea, .faq-form input[type=text], .faq-form input[type=tel], .faq-form input[type=number], .faq-form textarea {
@@ -10028,6 +10142,17 @@ body select:focus-visible {
   font-size: 16px;
   line-height: 20px;
   border-radius: 20px;
+  border: 1px solid #fff;
+}
+.partnership-form button[type=submit]:hover, .faq-form button[type=submit]:hover {
+  color: #fff;
+  background-color: #EE2742;
+  border-color: #fff;
+}
+.partnership-form button[type=submit]:focus, .faq-form button[type=submit]:focus {
+  color: #fff;
+  background-color: #DE1631;
+  border-color: #fff;
 }
 @media screen and (min-width: 768px) {
   .partnership-form button[type=submit], .faq-form button[type=submit] {
@@ -10274,11 +10399,15 @@ body select:focus-visible {
 .project-filter__item:last-child {
   margin-right: 0;
 }
-.project-filter__item:hover {
-  color: #EE2536;
-}
 .project-filter__item:hover p {
-  border-color: #EE2536;
+  background-color: #EE2742;
+  border-color: #fff;
+  color: #fff;
+}
+.project-filter__item:focus p {
+  border-color: #fff;
+  background-color: #DE1631;
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .project-filter__item {
@@ -10439,6 +10568,10 @@ body select:focus-visible {
   padding: 4px 5px;
   padding-left: 14px;
   width: 100%;
+}
+.faq.faq-section .faq__choosen__toggle p {
+  display: inline-block;
+  max-width: 200px;
 }
 @media screen and (min-width: 768px) {
   .faq.faq-section .faq__choosen__toggle {
@@ -10622,6 +10755,9 @@ body select:focus-visible {
     background-color: transparent;
     text-decoration: underline;
   }
+  .toggle-section-head__faq .toggle-section-head__item:focus {
+    background-color: transparent;
+  }
 }
 .toggle-section-head__faq .toggle-section-head__item._active-page {
   border: none;
@@ -10756,12 +10892,18 @@ body select:focus-visible {
   color: #fff;
   border-color: #fff;
 }
+.toggle-section__donate .toggle-section-head__item:focus {
+  background-color: transparent;
+}
 .toggle-section__donate .toggle-section-head__item._active-page {
   color: #fff;
   border: none;
   background-color: transparent;
   border-bottom: 4px solid transparent;
   border-color: #fff;
+}
+.toggle-section__donate .toggle-section-head__item._active-page:focus {
+  background-color: transparent;
 }
 .toggle-section__donate .toggle-section-content__item .separate-section__subtitle {
   color: #fff;
@@ -11396,8 +11538,16 @@ body select:focus-visible {
 }
 .article .article-social .article-social__item:hover {
   background-color: #FFF9E6;
+  border-color: #FFF9E6;
 }
 .article .article-social .article-social__item:hover svg path {
+  fill: #EE2742;
+}
+.article .article-social .article-social__item:focus {
+  background-color: #AA0017;
+  border-color: #AA0017;
+}
+.article .article-social .article-social__item:focus svg path {
   fill: #EE2742;
 }
 .article .article-social .article-social__item:not(.social__all) {
@@ -11656,6 +11806,14 @@ body select:focus-visible {
     padding: 12px 15px;
   }
 }
+.last-news .last-news-card__btn__more:hover {
+  background-color: #FC475F;
+  border-color: #FC475F;
+}
+.last-news .last-news-card__btn__more:focus {
+  background-color: #AA0017;
+  border-color: #AA0017;
+}
 
 .swiper-last-news {
   height: 420px;
@@ -11702,6 +11860,15 @@ body select:focus-visible {
 .faq__form__container .faq-form button[type=submit] {
   background-color: #fff;
   color: #EE2536;
+  border: 1px solid #fff;
+}
+.faq__form__container .faq-form button[type=submit]:hover {
+  background-color: #EE2742;
+  color: #fff;
+}
+.faq__form__container .faq-form button[type=submit]:focus {
+  background-color: #DE1631;
+  color: #fff;
 }
 
 .faq-header .rubric-head {
@@ -11767,12 +11934,14 @@ body select:focus-visible {
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
 }
 .faq-header__btn:hover {
-  background-color: #fff;
-  border-color: #EE2536;
-  color: #EE2536;
+  background-color: #FC475F;
+  color: #fff;
+}
+.faq-header__btn:focus {
+  background-color: #DE1631;
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .faq-header__btn {
@@ -11945,8 +12114,12 @@ body select:focus-visible {
   border-color: #C4C4C4;
 }
 .login-form button[type=submit]:hover {
-  background-color: #fff;
-  color: #EE2536;
+  background-color: #FC475F;
+  color: #fff;
+}
+.login-form button[type=submit]:focus {
+  background-color: #DE1631;
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .login-form button[type=submit] {
@@ -12208,7 +12381,6 @@ body select:focus-visible {
   }
 }
 .private-info__card {
-  overflow: hidden;
   width: 100%;
   height: 848px;
   position: relative;
@@ -12420,6 +12592,12 @@ body select:focus-visible {
   background-color: #EE2742;
 }
 .private-info__edit:hover svg path {
+  fill: #fff;
+}
+.private-info__edit:focus {
+  background-color: #DE1631;
+}
+.private-info__edit:focus svg path {
   fill: #fff;
 }
 @media screen and (min-width: 768px) {
@@ -13499,7 +13677,11 @@ body select:focus-visible {
   }
 }
 .profile-projects-detail__btn__white:hover {
-  background-color: #EE2536;
+  background-color: #EE2742;
+  color: #fff;
+}
+.profile-projects-detail__btn__white:focus {
+  background-color: #DE1631;
   color: #fff;
 }
 .profile-projects-detail__btn__red {
@@ -13507,8 +13689,10 @@ body select:focus-visible {
   background-color: #EE2536;
 }
 .profile-projects-detail__btn__red:hover {
-  background-color: #fff;
-  color: #EE2536;
+  background-color: #FC475F;
+}
+.profile-projects-detail__btn__red:focus {
+  background-color: #DE1631;
 }
 .profile-projects-detail .profile-projects-table__more__close {
   display: -webkit-box;
@@ -14066,7 +14250,11 @@ body select:focus-visible {
   }
 }
 .create-project-form__btn__container .create-project-form__btn__save:hover {
-  background-color: #EE2536;
+  background-color: #EE2742;
+  color: #fff;
+}
+.create-project-form__btn__container .create-project-form__btn__save:focus {
+  background-color: #DE1631;
   color: #fff;
 }
 .create-project-form__btn__container .create-project-form__btn__next {
@@ -14080,8 +14268,10 @@ body select:focus-visible {
   }
 }
 .create-project-form__btn__container .create-project-form__btn__next:hover {
-  color: #EE2536;
-  background-color: #fff;
+  background-color: #FC475F;
+}
+.create-project-form__btn__container .create-project-form__btn__next:focus {
+  background-color: #DE1631;
 }
 .create-project-form__status {
   margin-bottom: 40px;
@@ -14559,8 +14749,10 @@ body select:focus-visible {
   }
 }
 .my-projects__list .my-projects__list__download__more:hover {
-  color: #EE2742;
-  background-color: #fff;
+  background-color: #FC475F;
+}
+.my-projects__list .my-projects__list__download__more:focus {
+  background-color: #DE1631;
 }
 .my-projects__list .my-projcets__pagination {
   width: 100%;

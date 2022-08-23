@@ -580,24 +580,7 @@ $(document).ready(function () {
         }
     })
 
-    //swiper projects parthner page
-    let nodeMainProjectsSwiper = document.querySelector('.project-main-list .swiper.swiper-projects')
-    let projectsMainProjectsSwiper = undefined
-    if (document.documentElement.clientWidth < 768) {
-        projectsMainProjectsSwiper = new Swiper(nodeMainProjectsSwiper, {
-            slidesPerView: 'auto',
-            spaceBetween: 24,
-            grabCursor: true,
-            autoHeight: true,
-            pagination: {
-                el: '.project-main-list .swiper-projects .swiper-pagination-projects',
-                clickable: true
-            },
-        })
-    } else if(projectsMainProjectsSwiper) {
-        projectsMainProjectsSwiper.destroy(true, true);
-        projectsMainProjectsSwiper = null;
-    }
+    
 
     //swiper projects parthner page
     let nodeProjectsParthnerPageSwiper = document.querySelector('.swiper.swiper-projects.swiper-specprojects__prathner__page')

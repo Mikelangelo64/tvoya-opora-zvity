@@ -1407,7 +1407,9 @@ body {
 }
 
 .social-icon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
   border: 1px solid var(--color-secondary);
@@ -1415,9 +1417,37 @@ body {
   border-radius: 50%;
   font-size: 0;
   position: relative;
+
+  transition: all .3s ease;
+
+  svg {
+    max-width: 20px;
+
+    path{
+      transition: all .3s ease;
+    }
+  }
+
+  &:hover {
+    background-color: #fff;
+    border-color: #fff;
+    
+    svg path {
+      fill: #EE2742;
+    }
+  }
+
+  &:focus{
+    background-color: #AA0017;
+    border-color: #AA0017;
+    color: #fff;
+    svg path {
+      fill: #EE2742;
+    }
+  }
 }
 .social-icon::before {
-  display: block;
+  display: none;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1618,6 +1648,18 @@ body {
   border: 1px solid var(--color-accent);
   border-radius: 18px;
   text-transform: uppercase;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: #EE2742;
+    color: #fff;
+  }
+
+  &:focus{
+    background-color: #DE1631;
+    color: #fff;
+  }
+
 }
 
 .header-nav {
@@ -1973,6 +2015,12 @@ body {
 }
 .footer-social {
   margin-top: 2rem;
+
+  .social-icon {
+    svg{
+      max-width: 17px;
+    }
+  }
 }
 .footer-info {
   margin-top: 2.75rem;
@@ -2266,6 +2314,9 @@ body {
           background-color: transparent;
           border-color: #879E95;
         }
+        &:focus{
+          background-color: transparent;
+        }
 
         &._active-page {
           color: #000;
@@ -2276,6 +2327,9 @@ body {
             color: #000;
             background-color: transparent;
             border-color: #000;
+          }
+          &:focus{
+            background-color: transparent;
           }
         }
       }
@@ -2383,8 +2437,13 @@ body {
           }
 
           &:hover {
-             border-color: #EE2742;
-             background-color: #EE2742;
+             border-color: #FC475F;
+             background-color: #FC475F;
+             color: #fff;
+          }
+          &:focus {
+             border-color: #DE1631;
+             background-color: #DE1631;
              color: #fff;
           }
         }
@@ -2730,6 +2789,8 @@ body {
   .main-section-social .social-icon {
     width: 40px;
     height: 40px;
+
+
   }
   .main-section-social .social-icon::before {
     line-height: 38px;
@@ -4069,7 +4130,13 @@ body {
 
     &:hover{
       color: #fff;
-      background-color: #EE2536;
+      background-color: #EE2742;
+      border-color: #fff;
+    }
+
+    &:focus{
+      color: #fff;
+      background-color: #DE1631;
       border-color: #fff;
     }
 
@@ -5025,7 +5092,14 @@ body {
   text-transform: uppercase;
   position: relative;
   font-size: 12px;
+  transition: all .3s ease;
 
+  &:hover{
+    background-color: #FC475F;
+  }
+  &:focus{
+    background-color: #DE1631;
+  }
 
 }
 .howto-card-btn::after {
@@ -5852,6 +5926,16 @@ body {
 
       &:hover {
         background-color: #FFF9E6;
+        border-color: #FFF9E6;
+        svg {
+          path{
+            fill: #EE2742;
+          }
+        }
+      }
+      &:focus {
+        background-color: #AA0017;
+        border-color: #AA0017;
         svg {
           path{
             fill: #EE2742;
@@ -5930,9 +6014,14 @@ body {
     line-height: 18px;
 
     &:hover{
-      color: #EE2536;
-      background-color: #fff;
-      border-color: #EE2536;
+      color: #fff;
+      background-color: #FC475F;
+      border-color: #FC475F;
+    }
+    &:focus{
+      color: #fff;
+      background-color: #DE1631;
+      border-color: #DE1631;
     }
 
     @media screen and (min-width: 768px) {
@@ -6507,6 +6596,7 @@ body {
 
       //.separate-section-header-edit 
       &-edit {
+        cursor: pointer;
         width: 60px;
         height: 36px;
         display: flex;
@@ -6528,6 +6618,12 @@ body {
 
         &:hover{
           background-color: #EE2742;
+          svg path {
+            fill: #fff;
+          }
+        }
+        &:focus{
+          background-color: #DE1631;
           svg path {
             fill: #fff;
           }
@@ -7248,10 +7344,16 @@ body {
             &:hover{
               background-color: transparent;
             }
+            &:focus{
+              background-color: transparent;
+            }
           }
           
 
           &._active-page {
+            &:focus{
+              background-color: transparent;
+            }
 
             @media screen and (min-width: 768px) {
               color: #E51E37;
@@ -7499,6 +7601,12 @@ body {
 
         &:hover{
           background-color: #EE2742;
+          svg path {
+            fill: #fff;
+          }
+        }
+        &:focus{
+          background-color: #DE1631;
           svg path {
             fill: #fff;
           }
@@ -8216,10 +8324,15 @@ body {
         &:hover{
           background-color: transparent;
         }
+        &:focus{
+          background-color: transparent;
+        }
 
         &._active-page {
 
-          
+          &:focus{
+            background-color: transparent;
+          }
           color: #E51E37;
           border-color:#E51E37;
           
@@ -8269,8 +8382,14 @@ body {
     }
 
     &:hover{
-      color: #EE2536;
-      border-color: #EE2536;
+      color: #fff;
+      background-color: #EE2742;
+      border-color: #fff;
+    }
+    &:focus{
+      color: #fff;
+      background-color: #DE1631;
+      border-color: #fff;
     }
 
     @media screen and (min-width: 375px) {
@@ -8293,8 +8412,6 @@ body {
 
       &:hover{
         color: #fff;
-        background-color: #EE2536;
-        border-color: #fff;
       }
     }
   }
@@ -8439,6 +8556,18 @@ body {
     font-size: 16px;
     line-height: 20px;
     border-radius: 20px;
+    border: 1px solid #fff;
+
+    &:hover{
+      color: #fff;
+      background-color: #EE2742;
+      border-color: #fff;
+    }
+    &:focus{
+      color: #fff;
+      background-color: #DE1631;
+      border-color: #fff;
+    }
 
     @media screen and (min-width: 768px) {
       margin: unset;
@@ -8447,6 +8576,7 @@ body {
       border-radius: 24px;
       background-color: #fff;    
       color: #EE2536;
+      
     }
 
   }
@@ -8703,10 +8833,21 @@ body {
     }
 
     &:hover{
-      color: #EE2536;
+      //color: #EE2742;
 
       p{
-        border-color: #EE2536;
+        background-color: #EE2742;
+        border-color: #fff;
+        color: #fff;
+      }
+    }
+    &:focus{
+      //color: #DE1631;
+
+      p{
+        border-color: #fff;
+        background-color: #DE1631;
+        color:#fff;
       }
     }
 
@@ -8861,7 +9002,13 @@ body {
       padding-left: 14px;
       width: 100%;
 
+      p {
+        display: inline-block;
+        max-width: 200px;
+      }
+
       @media screen and (min-width: 768px) {
+
         display: none;
       }
 
@@ -9027,6 +9174,9 @@ body {
         background-color: transparent;
         text-decoration: underline;
       }
+      &:focus{
+        background-color: transparent;
+      }
     }
 
     &._active-page {
@@ -9179,6 +9329,9 @@ body {
       color: #fff;
       border-color: #fff;
     }
+    &:focus{
+      background-color: transparent;
+    }
 
     &._active-page {
       color: #fff;
@@ -9186,6 +9339,9 @@ body {
       background-color: transparent;
       border-bottom: 4px solid transparent;
       border-color: #fff;
+      &:focus{
+        background-color: transparent;
+      }
     }
   }
   
@@ -9752,6 +9908,16 @@ body {
 
       &:hover {
         background-color: #FFF9E6;
+        border-color: #FFF9E6;
+        svg {
+          path{
+            fill: #EE2742;
+          }
+        }
+      }
+      &:focus {
+        background-color: #AA0017;
+        border-color: #AA0017;
         svg {
           path{
             fill: #EE2742;
@@ -9996,6 +10162,15 @@ body {
         font-size: 16px;
         padding: 12px 15px; 
       }
+
+      &:hover {
+        background-color: #FC475F;
+        border-color: #FC475F;
+      }
+      &:focus {
+        background-color: #AA0017;
+        border-color: #AA0017;
+      }
     }
   }
   
@@ -10071,6 +10246,18 @@ body {
       background-color: #fff;    
       color: #EE2536;
   
+      border: 1px solid #fff;
+
+      &:hover{
+        //border-color: #EE2742;
+        background-color: #EE2742;    
+        color: #fff;
+      }
+      &:focus{
+        //border-color: #DE1631;
+        background-color: #DE1631;    
+        color: #fff;
+      }
     }
   }
   
@@ -10145,12 +10332,18 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: all .3s ease;
-    border: 1px solid transparent;
+    //border: 1px solid transparent;
 
     &:hover{
-      background-color: #fff;
-      border-color: #EE2536;
-      color: #EE2536;
+      background-color: #FC475F;
+      //border-color: #EE2536;
+      color: #fff;
+    }
+
+    &:focus{
+      background-color: #DE1631;
+      //border-color: #EE2536;
+      color: #fff;
     }
 
     @media screen and (min-width: 768px) {
@@ -10303,8 +10496,13 @@ body {
     }
 
     &:hover{
-      background-color: #fff;
-      color: #EE2536;
+      background-color: #FC475F;
+      color: #fff;
+    }
+
+    &:focus{
+      background-color: #DE1631;
+      color: #fff;
     }
 
     @media screen and (min-width: 768px) {
@@ -10582,7 +10780,7 @@ body {
   
   //.private-info__card 
   &__card {
-    overflow: hidden;
+    //overflow: hidden;
     width: 100%;
     height: 848px;
 
@@ -10804,6 +11002,12 @@ body {
 
     &:hover{
       background-color: #EE2742;
+      svg path {
+        fill: #fff;
+      }
+    }
+    &:focus{
+      background-color: #DE1631;
       svg path {
         fill: #fff;
       }
@@ -11880,7 +12084,11 @@ body {
   &__btn__white {
 
     &:hover{
-      background-color: #EE2536;
+      background-color: #EE2742;
+      color: #fff;
+    }
+    &:focus{
+      background-color: #DE1631;
       color: #fff;
     }
   }
@@ -11891,8 +12099,10 @@ body {
     background-color: #EE2536;
 
     &:hover{
-      background-color: #fff;
-      color: #EE2536;
+      background-color: #FC475F;
+    }
+    &:focus{
+      background-color: #DE1631;
     }
   }
 
@@ -12416,7 +12626,11 @@ body {
       }
 
       &:hover{
-        background-color: #EE2536;
+        background-color: #EE2742;
+        color: #fff;
+      }
+      &:focus{
+        background-color: #DE1631;
         color: #fff;
       }
       
@@ -12431,8 +12645,10 @@ body {
       }
 
       &:hover{
-        color: #EE2536;
-        background-color: #fff;
+        background-color: #FC475F;
+      }
+      &:focus{
+        background-color: #DE1631;
       }
     }
   }
@@ -12878,8 +13094,10 @@ body {
     }
 
     &:hover{
-      color: #EE2742;
-      background-color: #fff;
+      background-color: #FC475F;
+    }
+    &:focus{
+      background-color: #DE1631;
     }
   }
 
