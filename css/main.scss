@@ -10533,7 +10533,7 @@ body {
 }
 
 .private-info {
-
+  
   
   //.private-info__title 
   &__title {
@@ -10572,6 +10572,7 @@ body {
   
   //.private-info__wrapper 
   &__wrapper {
+    
     margin-bottom: 32px;
 
     @media screen and (min-width: 768px) {
@@ -10581,6 +10582,7 @@ body {
   
   //.private-info__card 
   &__card {
+    overflow: hidden;
     width: 100%;
     height: 848px;
 

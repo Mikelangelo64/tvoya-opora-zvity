@@ -12208,6 +12208,7 @@ body select:focus-visible {
   }
 }
 .private-info__card {
+  overflow: hidden;
   width: 100%;
   height: 848px;
   position: relative;
